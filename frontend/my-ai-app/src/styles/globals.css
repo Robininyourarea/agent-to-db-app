@@ -9,3 +9,45 @@
     --foreground: #ededed;
   }
 }
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5);
+  /* Neutral gray with transparency */
+  border-radius: 20px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(156, 163, 175, 0.8);
+}
+
+/* Specific Chat Scrollbar Styles */
+.chat-scroll-container::-webkit-scrollbar {
+  width: 6px;
+  /* Slightly thinner for chat */
+}
+
+.chat-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.3);
+  /* More subtle */
+  border-radius: 10px;
+}
+
+.chat-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(156, 163, 175, 0.6);
+}

@@ -142,7 +142,7 @@ export default function ChatByIdPage({ params }: { params: Promise<{ sessionId: 
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - 80px)' }}>
-      <Box sx={{ flexGrow: 1, overflowY: 'auto', p: 2, maxWidth: 1100, mx: 'auto', width: '100%' }}>
+      <Box className="chat-scroll-container" sx={{ flexGrow: 1, overflowY: 'auto', p: 2, maxWidth: 1100, mx: 'auto', width: '100%' }}>
         <Chat messages={messages} isLoading={loading} />
       </Box>
       <Box sx={{ p: 2, maxWidth: 1100, mx: 'auto', width: '100%' }}>
