@@ -32,6 +32,14 @@ export default function ToolsPage() {
         return description.split('\n')[0];
     };
 
+    const extractArguments = (description: string) => {
+        if (!description) return null;
+        const argsIndex = description.indexOf('Args:');
+        if (argsIndex === -1) return null;
+        const argsText = description.slice(argsIndex + 5).trim();
+        return argsText.split('\n').map(line => line.trim()).join('\n');
+    };
+
     if (loading) {
         return (
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
@@ -138,10 +146,30 @@ export default function ToolsPage() {
                                     WebkitLineClamp: 2,
                                     WebkitBoxOrient: 'vertical',
                                     lineHeight: 1.4,
-                                    minHeight: '2.8em'
+                                    mb: 1
                                 }}>
                                     {formatDescription(tool.description)}
                                 </Typography>
+
+                                {extractArguments(tool.description) && (
+                                    <Box sx={{
+                                        mt: 1,
+                                        p: 1,
+                                        bgcolor: 'background.default',
+                                        borderRadius: 1,
+                                        border: '1px solid',
+                                        borderColor: 'divider',
+                                        fontSize: '0.75rem',
+                                        fontFamily: 'monospace',
+                                        whiteSpace: 'pre-wrap',
+                                        color: 'text.secondary'
+                                    }}>
+                                        <Typography variant="caption" fontWeight={600} display="block" sx={{ mb: 0.5, color: 'text.primary' }}>
+                                            Arguments:
+                                        </Typography>
+                                        {extractArguments(tool.description)}
+                                    </Box>
+                                )}
                             </CardContent>
                         </Card>
                     </Grid>
