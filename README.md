@@ -8,6 +8,24 @@ The system is composed of three main parts working together:
 *   **AI Agent (FastAPI + LangChain)**: An intelligent agent that processes user requests. It utilizes various **tools** to fetch real-time data from the backend server and maintains conversation context/memory using **MongoDB**.
 *   **Backend Server (Express + PostgreSQL)**: The core business logic and data layer. It manages application data (such as products, inventory, users) which is safely stored in a **PostgreSQL** database.
 
+## Screenshots
+
+### Welcome Page
+![Welcome Page](./welcome.png)
+*The landing page of the application.*
+
+### Chat Session
+![Chat Session](./chat.png)
+*Interactive chat session with the AI Assistant.*
+
+### Database Schema
+![Database Schema](./schema.png)
+*Visual representation of the database schema.*
+
+### Tools
+![Tools Page](./tools.png)
+*List of available AI tools and their capabilities.*
+
 ## Prerequisites
 
 Before running the project, ensure you have the following installed:
