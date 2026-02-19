@@ -95,7 +95,7 @@ export default function Sidebar({ isOpen, onToggle }: Readonly<SidebarProps>) {
                 fontFamily='var(--font-manrope)'
                 variant="h5"
                 sx={{ flexGrow: 1, ml: 1 }}>
-                xen.ai
+                zentrix.ai
               </Typography>
               <IconButton onClick={onToggle}>
                 <ChevronLeftIcon />

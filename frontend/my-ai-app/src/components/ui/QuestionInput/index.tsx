@@ -91,7 +91,7 @@ export default function QuestionInput({
         {/* Text Input */}
         <TextField
           fullWidth
-          placeholder="Ask any question with xen.ai ..."
+          placeholder="Ask any question with zentrix.ai ..."
           variant="standard"
           value={value}
           onChange={onChange}

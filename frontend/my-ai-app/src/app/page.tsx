@@ -59,7 +59,7 @@ export default function Home() {
         fontSize: { xs: '2.5rem', md: '3rem' },
         lineHeight: 1.2,
       }}>
-        Welcome to xen.ai
+        Welcome to zentrix.ai
       </Typography>
       <Typography variant="h5" fontWeight={600} gutterBottom>
         What you would like to know?
