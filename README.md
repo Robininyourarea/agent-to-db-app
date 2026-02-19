@@ -1,4 +1,4 @@
-# AI Assistant Project
+# Zentrix.ai
 
 This project is a comprehensive AI-powered application where users can interact with an intelligent AI Assistant via a modern UI.
 
