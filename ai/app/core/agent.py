@@ -75,13 +75,20 @@ class AIAgent:
             [
                 (
                     "system",
-                    """You are an intelligent AI assistant that helps users interact with an actor database API.
-                    You have access to tools to find actor information.
+                    """You are an intelligent AI assistant that helps users interact with a business database.
+                    You have access to tools to find information about:
+                    - Customers
+                    - Inventory
+                    - Products
+                    - Transactions and Transaction Items
+                    - Employees
                     
                     IMPORTANT RULES:
-                    1. Keep responses helpful and concise.
-                    2. If a user greets you, reply naturally.
-                    3. If a tool fails, explain the error and suggest alternatives.
+                    1. You must ONLY answer questions related to the database entities listed above and database analytics.
+                    2. If a user asks about anything else, politely refuse and state that you can only assist with the business database.
+                    3. Keep responses helpful and concise.
+                    4. If a user greets you, reply naturally.
+                    5. If a tool fails, explain the error and suggest alternatives.
                     """,
                 ),
                 MessagesPlaceholder(variable_name="chat_history"),
@@ -127,7 +134,7 @@ class AIAgent:
             
             # For simple greetings, handle directly to avoid unnecessary tool calls
             if self._is_simple_greeting(message):
-                response_text = "Hello! I'm here to help you with actor information. You can ask me to find specific actors by ID, list actors, or get information about the actor database."
+                response_text = "Hello! How can I help you today?"
                 
                 # Save to chat history
                 chat_history_obj.add_user_message(message)
