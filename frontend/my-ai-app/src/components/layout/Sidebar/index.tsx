@@ -14,7 +14,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import AddIcon from '@mui/icons-material/Add';
 import MenuIcon from '@mui/icons-material/Menu';
-import SchemaIcon from '@mui/icons-material/Schema';
+import TuneIcon from '@mui/icons-material/Tune';
+import DataArrayIcon from '@mui/icons-material/DataArray';
 import ChatHistoryList from '../../section/ChatHistoryList';
 import { useRouter } from 'next/navigation';
 
@@ -195,10 +196,60 @@ export default function Sidebar({ isOpen, onToggle }: Readonly<SidebarProps>) {
                     },
                 ]}
               >
-                <SchemaIcon />
+                <DataArrayIcon />
               </ListItemIcon>
               <ListItemText
                 primary="DB Schema"
+                sx={[
+                  isOpen
+                    ? {
+                      opacity: 1,
+                    }
+                    : {
+                      opacity: 0,
+                    },
+                ]}
+              />
+            </ListItemButton>
+          </ListItem>
+
+          {/* Tools Button */}
+          <ListItem disablePadding sx={{ display: 'block' }}>
+            <ListItemButton
+              sx={[
+                {
+                  minHeight: 48,
+                  px: 2.5,
+                },
+                isOpen
+                  ? {
+                    justifyContent: 'initial',
+                  }
+                  : {
+                    justifyContent: 'center',
+                  },
+              ]}
+              onClick={() => router.push('/tools')}
+            >
+              <ListItemIcon
+                sx={[
+                  {
+                    minWidth: 0,
+                    justifyContent: 'center',
+                  },
+                  isOpen
+                    ? {
+                      mr: 3,
+                    }
+                    : {
+                      mr: 'auto',
+                    },
+                ]}
+              >
+                <TuneIcon />
+              </ListItemIcon>
+              <ListItemText
+                primary="Tools"
                 sx={[
                   isOpen
                     ? {
